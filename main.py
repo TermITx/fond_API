@@ -1,13 +1,22 @@
 from typing import Union
 import services as service
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
+def read_root(response_class=HTMLResponse):
+    
+    return '''<!DOCTYPE html>
+<html>
+    <head>
+        <!-- head definitions go here -->
+    </head>
+    <body>
+        <!-- the content goes here -->
+    </body>
+</html>'''
 @app.get("/add")
 def plus_one(num: int):
     return {"Result": num + 1}
