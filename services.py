@@ -14,6 +14,8 @@ def call_R_script(name : str):
 def get_position(strategy : str):
     if strategy == 'DM':
         R_script_name = 'DM_features'
+        ##Poziv yahoo finance-a za danasnje OHLCV podatke
+        call_yahoo()
         ##Ovdje pozvati prvo izgradnju featura s R skriptom
         subprocess.call ("Rscript --vanilla " + PATH +  + R_script_name +".R", shell=True)
         ##Pricekaj da se generiraju featurei
