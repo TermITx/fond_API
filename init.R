@@ -1,4 +1,4 @@
-my_packages <- c("devtools")
+my_packages <- c("devtools",'stats','graphics','grDevices','utils','datasets','methods','base')
  install_if_missing <- function(p) {
  if(p %in% rownames(installed.packages())==FALSE){
  install.packages(p)}

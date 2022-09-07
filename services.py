@@ -1,3 +1,4 @@
+from os import popen
 import subprocess
 import time
 import pandas as pd
@@ -17,12 +18,14 @@ def get_position(strategy : str):
         ##Poziv yahoo finance-a za danasnje OHLCV podatke
         call_yahoo()
         ##Ovdje pozvati prvo izgradnju featura s R skriptom
-        subprocess.call ("Rscript --vanilla " + PATH +  + R_script_name +".R", shell=True)
+        #subprocess.call ("Rscript --vanilla " + PATH +  + R_script_name +".R", shell=True)
+        process = subprocess.Popen(["Rscript", "--vanilla",PATH,R_script_name ,".R"])
+        process.wait()
         ##Pricekaj da se generiraju featurei
         time.sleep(1)
         ##Zatim pozvati poziciju s istim featurima
 
-        pass
+        return {"Result":"Success"}
 
 def call_yahoo(tickers=None,date=None):
     if tickers is None:
