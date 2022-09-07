@@ -5,18 +5,19 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-@app.get("/")
-def read_root(response_class=HTMLResponse):
+@app.get("/",response_class=HTMLResponse)
+async def read_root():
     
-    return '''<!DOCTYPE html>
+    return """
 <html>
     <head>
         <!-- head definitions go here -->
     </head>
     <body>
-        <!-- the content goes here -->
+        <h1> Let's make some money! </h1>
     </body>
-</html>'''
+</html>
+"""
 @app.get("/add")
 def plus_one(num: int):
     return {"Result": num + 1}
