@@ -2,6 +2,7 @@ from typing import Union
 import services as service
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+import uvicorn
 
 app = FastAPI()
 
@@ -29,4 +30,7 @@ def call_r_script(name : str):
 @app.get("/position")
 def call_r_script(strategy: str):
     return service.get_position(strategy)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
 
