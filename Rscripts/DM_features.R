@@ -1,7 +1,8 @@
 #ODAVDE
 library(finfeatures)
 library(data.table)
-names <- c('KO','MRK','MSFT','NYCB','PCG','RF','SPY','SWN','T','TELL','WBD','WU','XOM')
+#names <- c('KO','MRK','MSFT','NYCB','PCG','RF','SPY','SWN','T','TELL','WBD','WU','XOM')
+names <- c('AAPL', 'AMD', 'T', 'BAC', 'SWN', 'MSFT', 'XOM', 'BMY', 'PCG', 'WBD', 'CCL', 'C', 'KO', 'TELL', 'DIS', 'MRK', 'BSX', 'CL', 'CVX', 'FTI', 'AMZN', 'WU', 'NYCB', 'RF','SPY')
 a<-0.0
 print("Krecemo")
 for (name in names){

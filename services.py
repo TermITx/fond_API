@@ -9,7 +9,7 @@ from datetime import datetime
 import model.call_model as model
 import model.examples.my_worker as my_worker
 import model.combine_all_feature as combine_all_features
-PATH = "C:/Users/Karlo/Desktop/"
+PATH = "Rscripts"
 
 def call_R_script(name : str):
     subprocess.call ("Rscript --vanilla " + PATH + name +  ".R", shell=True)
@@ -46,7 +46,8 @@ def get_position(strategy : str):
 
 def call_yahoo(tickers=None,date=None):
     if tickers is None:
-        tickers = ['AAL','AAPL','AMD','AMZN','APA','BAC','BEN','BMY','BSX','C','CCL','CL','CLF','CMCSA','CSCO','CSX','CVX','DAL','DIS','ET','FCX','FTI','GM','HBAN','INTC','JPM','KO','LUMN','MRK','MRO','MSFT','MU','NEE','NFLX','NVDA','NYCB','OXY','PCG','PFE','PLUG','QCOM','RF','RIG','SIRI','SPY','SWN','T','TELL','UEC','VZ','WBA','WBD','WFC','WU','X','XOM']
+        #tickers = ['AAL','AAPL','AMD','AMZN','APA','BAC','BEN','BMY','BSX','C','CCL','CL','CLF','CMCSA','CSCO','CSX','CVX','DAL','DIS','ET','FCX','FTI','GM','HBAN','INTC','JPM','KO','LUMN','MRK','MRO','MSFT','MU','NEE','NFLX','NVDA','NYCB','OXY','PCG','PFE','PLUG','QCOM','RF','RIG','SIRI','SPY','SWN','T','TELL','UEC','VZ','WBA','WBD','WFC','WU','X','XOM']
+        tickers = ['AAPL', 'AMD', 'T', 'BAC', 'SWN', 'MSFT', 'XOM', 'BMY', 'PCG', 'WBD', 'CCL', 'C', 'KO', 'TELL', 'DIS', 'MRK', 'BSX', 'CL', 'CVX', 'FTI', 'AMZN', 'WU', 'NYCB', 'RF','SPY']
     if date is None:
         date = datetime.today().strftime('%Y-%m-%d')
 
