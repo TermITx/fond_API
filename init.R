@@ -5,5 +5,6 @@ my_packages <- c("devtools",'stats','graphics','grDevices','utils','datasets','m
  }
  
 invisible(sapply(my_packages, install_if_missing))
+library('devtools')
 invisible(devtools::install_bitbucket( 'quanttools/QuantTools' ))
 invisible(install_github("MislavSag/finfeatures"))
